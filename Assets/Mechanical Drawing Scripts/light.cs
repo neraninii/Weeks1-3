@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class light : MonoBehaviour
 {
+    public AnimationCurve curve;
+    public float t = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +13,19 @@ public class light : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        t += Time.deltaTime; 
+
+        if (t > 2)
+        {
+            t = 0; 
+        }
+
+        float y = curve.Evaluate(t); 
+
+        transform.localScale = Vector3.one * curve.Evaluate(t);
+
+
+
         
     }
 }
