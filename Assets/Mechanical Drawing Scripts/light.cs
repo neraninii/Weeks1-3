@@ -15,7 +15,7 @@ public class light : MonoBehaviour
     {
         t += Time.deltaTime; 
 
-        if (t > 2)
+        if (t > 1.2)
         {
             t = 0; 
         }
